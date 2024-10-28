@@ -32,6 +32,8 @@ export const errorHandler = (err: any,
 		return response.status(err.statusCode)
 			.send({ errors: err.serializeErrors() });
 
+	console.log("Error ::", err);
+	
 	return response.status(_error._code)
 		.send(formattedErrorResponse);
 };
